@@ -1,0 +1,14 @@
+.custom-layout {
+    font-family: Arial, sans-serif;
+}
+
+.custom-layout header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.custom-layout main {
+    padding: 20px;
+}
