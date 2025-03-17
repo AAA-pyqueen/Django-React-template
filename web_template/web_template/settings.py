@@ -15,22 +15,16 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6wm$e8zo+uk(4n$qyahuqz+@zuxv4r)$1jt236j7_94mos75+4'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+DEBUG = os.environment.get('DJANGO_DEBUG', False) == 'True'
 ALLOWED_HOSTS = []
 
+# settings/development.py
+from .base import *
+DEBUG = True
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
